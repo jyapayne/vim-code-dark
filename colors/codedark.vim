@@ -66,7 +66,7 @@ endif
 " (some of them may be unused)
 
 let s:cdNone = {'gui': 'NONE', 'cterm': 'NONE', 'cterm256': 'NONE'}
-let s:cdFront = {'gui': '#D4D4D4', 'cterm': s:cterm05, 'cterm256': '188'}
+let s:cdFront = {'gui': '#e6e2e9', 'cterm': s:cterm05, 'cterm256': '188'}
 let s:cdBack = {'gui': '#1E1E1E', 'cterm': s:cterm00, 'cterm256': '234'}
 
 let s:cdTabCurrent = {'gui': '#1E1E1E', 'cterm': s:cterm00, 'cterm256': '234'}
@@ -121,7 +121,7 @@ let s:cdOrange = {'gui': '#CE9178', 'cterm': s:cterm0F, 'cterm256': '173'}
 let s:cdLightRed = {'gui': '#D16969', 'cterm': s:cterm08, 'cterm256': '167'}
 if g:codedark_conservative | let s:cdLightRed = s:cdOrange | endif
 let s:cdYellowOrange = {'gui': '#D7BA7D', 'cterm': s:cterm0A, 'cterm256': '179'}
-let s:cdYellow = {'gui': '#DCDCAA', 'cterm': s:cterm0A, 'cterm256': '187'}
+let s:cdYellow = {'gui': '#dde0a1', 'cterm': s:cterm0A, 'cterm256': '187'}
 if g:codedark_conservative | let s:cdYellow = s:cdFront | endif
 let s:cdPink = {'gui': '#C586C0', 'cterm': s:cterm0E, 'cterm256': '176'}
 if g:codedark_conservative | let s:cdPink = s:cdBlue | endif
@@ -191,7 +191,7 @@ call <sid>hi('Conditional', s:cdPink, {}, 'none', {})
 call <sid>hi('Repeat', s:cdPink, {}, 'none', {})
 call <sid>hi('Label', s:cdPink, {}, 'none', {})
 call <sid>hi('Operator', s:cdFront, {}, 'none', {})
-call <sid>hi('Keyword', s:cdPink, {}, 'none', {})
+call <sid>hi('Keyword', s:cdBlue, {}, 'none', {})
 call <sid>hi('Exception', s:cdPink, {}, 'none', {})
 
 call <sid>hi('PreProc', s:cdPink, {}, 'none', {})
@@ -200,10 +200,11 @@ call <sid>hi('Define', s:cdPink, {}, 'none', {})
 call <sid>hi('Macro', s:cdPink, {}, 'none', {})
 call <sid>hi('PreCondit', s:cdPink, {}, 'none', {})
 
-call <sid>hi('Type', s:cdBlue, {}, 'none', {})
+call <sid>hi('Type', s:cdBlueGreen, {}, 'none', {})
 call <sid>hi('StorageClass', s:cdBlue, {}, 'none', {})
 call <sid>hi('Structure', s:cdBlue, {}, 'none', {})
 call <sid>hi('Typedef', s:cdBlue, {}, 'none', {})
+call <sid>hi('Pragma', s:cdBlue, {}, 'none', {})
 
 call <sid>hi('Special', s:cdYellowOrange, {}, 'none', {})
 call <sid>hi('SpecialChar', s:cdFront, {}, 'none', {})
