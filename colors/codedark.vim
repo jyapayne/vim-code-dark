@@ -190,7 +190,7 @@ call <sid>hi('Statement', s:cdPink, {}, 'none', {})
 call <sid>hi('Conditional', s:cdPink, {}, 'none', {})
 call <sid>hi('Repeat', s:cdPink, {}, 'none', {})
 call <sid>hi('Label', s:cdPink, {}, 'none', {})
-call <sid>hi('Operator', s:cdFront, {}, 'none', {})
+call <sid>hi('Operator', s:cdPink, {}, 'none', {})
 call <sid>hi('Keyword', s:cdBlue, {}, 'none', {})
 call <sid>hi('Exception', s:cdPink, {}, 'none', {})
 
