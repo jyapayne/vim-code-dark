@@ -69,9 +69,11 @@ let s:cdNone = {'gui': 'NONE', 'cterm': 'NONE', 'cterm256': 'NONE'}
 let s:cdFront = {'gui': '#e6e2e9', 'cterm': s:cterm05, 'cterm256': '188'}
 let s:cdBack = {'gui': '#1E1E1E', 'cterm': s:cterm00, 'cterm256': '234'}
 
-let s:cdTabCurrent = {'gui': '#1E1E1E', 'cterm': s:cterm00, 'cterm256': '234'}
-let s:cdTabOther = {'gui': '#2D2D2D', 'cterm': s:cterm01, 'cterm256': '236'}
-let s:cdTabOutside = {'gui': '#252526', 'cterm': s:cterm01, 'cterm256': '235'}
+let s:cdTabCurrent = {'gui': '#264F78', 'cterm': s:cterm00, 'cterm256': '234'}
+" let s:cdTabOther = {'gui': '#2D2D2D', 'cterm': s:cterm01, 'cterm256': '236'}
+" let s:cdTabOutside = {'gui': '#252526', 'cterm': s:cterm01, 'cterm256': '235'}
+let s:cdTabOther = {'gui': 'none', 'cterm': 'none', 'cterm256': 'none'}
+let s:cdTabOutside = {'gui': 'none', 'cterm': 'none', 'cterm256': 'none'}
 
 let s:cdLeftDark = {'gui': '#252526', 'cterm': s:cterm01, 'cterm256': '235'}
 let s:cdLeftMid = {'gui': '#373737', 'cterm': s:cterm03, 'cterm256': '237'}
@@ -92,11 +94,13 @@ let s:cdCursorLight = {'gui': '#AEAFAD', 'cterm': s:cterm04, 'cterm256': '145'}
 let s:cdSelection = {'gui': '#264F78', 'cterm': s:cterm03, 'cterm256': '24'}
 let s:cdLineNumber = {'gui': '#5A5A5A', 'cterm': s:cterm04, 'cterm256': '240'}
 
+let s:cdDiffYellowDark = {'gui': '#4D4B03', 'cterm': s:cterm08, 'cterm256': '52'}
 let s:cdDiffRedDark = {'gui': '#4B1818', 'cterm': s:cterm08, 'cterm256': '52'}
 let s:cdDiffRedLight = {'gui': '#6F1313', 'cterm': s:cterm08, 'cterm256': '52'}
+let s:cdDiffFgLight = {'gui': 'none', 'cterm': s:cterm08, 'cterm256': '52'}
 let s:cdDiffRedLightLight = {'gui': '#FB0101', 'cterm': s:cterm08, 'cterm256': '09'}
 let s:cdDiffGreenDark = {'gui': '#373D29', 'cterm': s:cterm0B, 'cterm256': '237'}
-let s:cdDiffGreenLight = {'gui': '#4B5632', 'cterm': s:cterm09, 'cterm256': '58'}
+let s:cdDiffGreenLight = {'gui': '#086815', 'cterm': s:cterm09, 'cterm256': '58'}
 
 let s:cdSearchCurrent = {'gui': '#4B5632', 'cterm': s:cterm09, 'cterm256': '58'} 
 let s:cdSearch = {'gui': '#264F78', 'cterm': s:cterm03, 'cterm256': '24'}
@@ -135,9 +139,13 @@ call <sid>hi('CursorLine', {}, s:cdCursorDarkDark, 'none', {})
 call <sid>hi('CursorColumn', {}, s:cdCursorDarkDark, 'none', {})
 call <sid>hi('Directory', s:cdBlue, s:cdBack, 'none', {})
 call <sid>hi('DiffAdd', {}, s:cdDiffGreenLight, 'none', {})
-call <sid>hi('DiffChange', {}, s:cdDiffRedDark, 'none', {})
+call <sid>hi('DiffChange', {}, s:cdDiffYellowDark, 'none', {})
 call <sid>hi('DiffDelete', {}, s:cdDiffRedLight, 'none', {})
-call <sid>hi('DiffText', {}, s:cdDiffRedLight, 'none', {})
+call <sid>hi('DiffText', s:cdNone, s:cdDiffRedLight, 'none', {})
+call <sid>hi('DiffAddL', s:cdNone, s:cdDiffGreenLight, 'none', {})
+call <sid>hi('DiffChangeL', s:cdNone, s:cdDiffYellowDark, 'none', {})
+call <sid>hi('DiffDeleteL', s:cdNone, s:cdDiffRedLight, 'none', {})
+call <sid>hi('DiffTextL', s:cdNone, s:cdDiffRedLight, 'none', {})
 call <sid>hi('EndOfBuffer', s:cdLineNumber, s:cdBack, 'none', {})
 call <sid>hi('ErrorMsg', s:cdRed, s:cdBack, 'none', {})
 call <sid>hi('VertSplit', s:cdSplitDark, s:cdBack, 'none', {})
@@ -170,9 +178,9 @@ call <sid>hi('WarningMsg', s:cdOrange, s:cdBack, 'none', {})
 call <sid>hi('WildMenu', s:cdNone, s:cdSelection, 'none', {})
 
 " Legacy groups for official git.vim and diff.vim syntax
-hi! link diffAdded DiffAdd
-hi! link diffChanged DiffChange
-hi! link diffRemoved DiffDelete
+hi! link diffAdded DiffAddL
+hi! link diffChanged DiffChangeL
+hi! link diffRemoved DiffDeleteL
 
 call <sid>hi('Comment', s:cdGreen, {}, 'none', {})
 
