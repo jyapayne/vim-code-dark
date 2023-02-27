@@ -67,6 +67,7 @@ endif
 
 let s:cdNone = {'gui': 'NONE', 'cterm': 'NONE', 'cterm256': 'NONE'}
 let s:cdFront = {'gui': '#e6e2e9', 'cterm': s:cterm05, 'cterm256': '188'}
+let s:cdDeactivated = {'gui': '#8B8C92', 'cterm': s:cterm05, 'cterm256': '188'}
 let s:cdBack = {'gui': '#1E1E1E', 'cterm': s:cterm00, 'cterm256': '234'}
 
 let s:cdTabCurrent = {'gui': '#264F78', 'cterm': s:cterm00, 'cterm256': '234'}
@@ -113,6 +114,7 @@ endif
 
 let s:cdGray = {'gui': '#808080', 'cterm': s:cterm04, 'cterm256': '08'}
 let s:cdViolet = {'gui': '#646695', 'cterm': s:cterm04, 'cterm256': '60'}
+let s:cdViolet2 = {'gui': '#7E6CC4', 'cterm': s:cterm04, 'cterm256': '60'}
 let s:cdBlue = {'gui': '#569CD6', 'cterm': s:cterm0D, 'cterm256': '75'}
 let s:cdDarkBlue = {'gui': '#223E55', 'cterm': s:cterm0D, 'cterm256': '73'}
 let s:cdLightBlue = {'gui': '#9CDCFE', 'cterm': s:cterm0C, 'cterm256': '117'}
@@ -184,14 +186,14 @@ hi! link diffRemoved DiffDeleteL
 
 call <sid>hi('Comment', s:cdGreen, {}, 'none', {})
 
-call <sid>hi('Constant', s:cdBlue, {}, 'none', {})
+call <sid>hi('Constant', s:cdViolet2, {}, 'none', {})
 call <sid>hi('String', s:cdOrange, {}, 'none', {})
 call <sid>hi('Character', s:cdOrange, {}, 'none', {})
 call <sid>hi('Number', s:cdLightGreen, {}, 'none', {})
 call <sid>hi('Boolean', s:cdBlue, {}, 'none', {})
 call <sid>hi('Float', s:cdLightGreen, {}, 'none', {})
 
-call <sid>hi('Identifier', s:cdLightBlue, {}, 'none', {})
+call <sid>hi('Identifier', s:cdFront, {}, 'none', {})
 call <sid>hi('Function', s:cdYellow, {}, 'none', {})
 
 call <sid>hi('Statement', s:cdPink, {}, 'none', {})
@@ -224,7 +226,7 @@ call <sid>hi('Debug', s:cdFront, {}, 'none', {})
 call <sid>hi('Underlined', s:cdNone, {}, 'underline', {})
 call <sid>hi("Conceal", s:cdFront, s:cdBack, 'none', {})
 
-call <sid>hi('Ignore', s:cdFront, {}, 'none', {})
+call <sid>hi('Ignore', s:cdDeactivated, {}, 'none', {})
 
 call <sid>hi('Error', s:cdRed, s:cdBack, 'undercurl', s:cdRed)
 
